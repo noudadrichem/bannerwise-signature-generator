@@ -24,7 +24,7 @@
   <div class="right" style="float: left;">
     <div class="titles" style="float: left;margin-right: 12px;">
         <ul style="margin: 0;padding: 0;list-style: none;">
-          <li style="margin: 0;">Skype:</li>
+          <li style="margin: 0;">{{ network }}:</li>
           <li style="margin: 4px 0;">Phone:</li>
           <li style="margin: 4px 0;">Web:</li>
           <li style="margin: 0;">Connect:</li>
@@ -32,15 +32,17 @@
     </div>
     <div class="info" style="float: left;color: #2b90d9;">
       <ul style="margin: 0;padding: 0;list-style: none;">
-        <li style="margin: 0;">{{ skype }}</li>
+        <li style="margin: 0;"><a style="text-decoration:none; color:inherit;" href="{{networkUrl}}">{{ username }}</a></li>
         <li style="margin: 4px 0;">+31 20 235 2151</li>
         <li style="margin: 4px 0;"><a style="text-decoration:none; color:inherit;" href="https://bannerwise.io">bannerwise.io</a></li>
         <li style="margin: 0;">
-          <a href="{{ twitterlink }}" style="text-decoration: none;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewbox="0 0 12 10">
-              <path fill="#2B90D9" fill-rule="evenodd" d="M12 1.184c-.44.2-.916.336-1.414.397A2.519 2.519 0 0 0 11.67.185c-.476.289-1.002.499-1.564.612A2.428 2.428 0 0 0 8.308 0C6.949 0 5.847 1.13 5.847 2.524c0 .198.02.39.063.575C3.864 2.994 2.05 1.99.835.461a2.57 2.57 0 0 0-.333 1.27c0 .876.435 1.649 1.095 2.101a2.417 2.417 0 0 1-1.115-.314v.03c0 1.224.849 2.245 1.975 2.476a2.391 2.391 0 0 1-1.112.044C1.66 7.07 2.567 7.8 3.645 7.82A4.861 4.861 0 0 1 0 8.867 6.855 6.855 0 0 0 3.774 10c4.529 0 7.005-3.846 7.005-7.182 0-.11-.002-.22-.007-.328.481-.356.9-.8 1.228-1.306"></path>
-            </svg>
-          </a>
+          {{#if twitterlink}}
+            <a href="{{ twitterlink }}" style="text-decoration: none;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewbox="0 0 12 10">
+                <path fill="#2B90D9" fill-rule="evenodd" d="M12 1.184c-.44.2-.916.336-1.414.397A2.519 2.519 0 0 0 11.67.185c-.476.289-1.002.499-1.564.612A2.428 2.428 0 0 0 8.308 0C6.949 0 5.847 1.13 5.847 2.524c0 .198.02.39.063.575C3.864 2.994 2.05 1.99.835.461a2.57 2.57 0 0 0-.333 1.27c0 .876.435 1.649 1.095 2.101a2.417 2.417 0 0 1-1.115-.314v.03c0 1.224.849 2.245 1.975 2.476a2.391 2.391 0 0 1-1.112.044C1.66 7.07 2.567 7.8 3.645 7.82A4.861 4.861 0 0 1 0 8.867 6.855 6.855 0 0 0 3.774 10c4.529 0 7.005-3.846 7.005-7.182 0-.11-.002-.22-.007-.328.481-.356.9-.8 1.228-1.306"></path>
+              </svg>
+            </a>
+          {{/if}}
           <a href="{{ linkedinlink }}" style="margin-left: 8px;text-decoration: none;">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewbox="0 0 12 11">
               <path fill="#2B90D9" fill-rule="evenodd" d="M12 11H9.348V7.133c0-1.012-.415-1.703-1.327-1.703-.698 0-1.086.466-1.267.916-.068.16-.057.386-.057.61V11H4.07s.033-6.85 0-7.473h2.627V4.7c.155-.513.995-1.244 2.335-1.244C10.694 3.456 12 4.53 12 6.845V11zM1.413 2.593h-.017C.549 2.593 0 2.022 0 1.297 0 .56.565 0 1.429 0c.863 0 1.393.558 1.41 1.295 0 .724-.547 1.298-1.426 1.298zm-1.11.934h2.339V11H.302V3.527z"></path>
