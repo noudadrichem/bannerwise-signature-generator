@@ -26,15 +26,24 @@
 		<form id="form">
 			<input class="input" v-model="signatureInfo.name" placeholder="Name" autofocus>
 			<input class="input" v-model="signatureInfo.jobfunction" placeholder="Job function">
-			<input class="input" v-model="signatureInfo.skype" placeholder="Skype username">
+      <select v-model="signatureInfo.network" style="width:30%; display:inline; margin-right: 5px;">
+        <option value="">choose network</option>
+        <option value="skype" >Skype</option>
+        <option value="dribble">Dribbble</option>
+        <option value="github">Github</option>
+      </select>
+			<input style="width:69%; display:inline;" :class="[signatureInfo.network == 'dribble' || signatureInfo.network == 'github' ? 'urlInput' : '']" class="input" v-model="signatureInfo.username" v-bind="signatureInfo.connection" placeholder="username">
+      <input
+            class="input"
+            :class="[signatureInfo.network == 'dribble' || signatureInfo.network == 'github' ? 'urlInput' : '']"
+            v-model="signatureInfo.networkUrl"
+            v-if="signatureInfo.network == 'dribble' || signatureInfo.network == 'github'" 
+            placeholder="link"/>
 			<input class="input" v-model="signatureInfo.twitterlink" placeholder="Twitter Link">
 			<input class="input" v-model="signatureInfo.linkedinlink" placeholder="Linkedin Link">
-
-
 			<button @click="download" class="success button" type="button">Download Signature</button>
 			<button @click="preview" class="success outline button" type="button">Preview Signature</button>
 		</form>
-
 		<div id="preview" v-show="seePreview">
 			<div class="content">
 				<div ref="preview"></div>
