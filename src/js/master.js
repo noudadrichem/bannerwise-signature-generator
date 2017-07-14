@@ -6,6 +6,8 @@ new Vue({
   data: {
     name: 'Create your Bannerwise signature',
     seePreview: false,
+    firstName: '',
+    lastName: '',
     signatureInfo: {
       name: '',
       jobfunction: '',
@@ -16,7 +18,11 @@ new Vue({
       networkUrl: ''
     }
   },
-
+  computed: {
+    fullName () {
+      return `${this.firstName} ${this.lastName}`
+    }
+  },
   methods: {
     download() {
       if(this.signatureInfo.network == 'skype'){
@@ -30,6 +36,8 @@ new Vue({
         this.$set(this.signatureInfo, 'networkUrl', 'memes')
       }
       this.seePreview = !this.seePreview
+      this.$set(this.signatureInfo, 'name', this.fullName)
+      console.log(this.signatureInfo)
       this.$refs.preview.innerHTML = template(this.signatureInfo)
     }
   }

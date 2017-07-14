@@ -24,9 +24,10 @@
 		</h1>
 
 		<form id="form">
-			<input class="input" v-model="signatureInfo.name" placeholder="Name" autofocus>
+      <input class="input name" v-model="firstName" placeholder="First Name" autofocus>
+			<input class="input name" v-model="lastName" placeholder="Last Name" autofocus>
 			<input class="input" v-model="signatureInfo.jobfunction" placeholder="Job function">
-      <select v-model="signatureInfo.network" style="width:30%; display:inline; margin-right: 5px;">
+      <select class="selection-dropdown" v-model="signatureInfo.network" style="width:30%; display:inline; margin-right: 5px;">
         <option value="">choose network</option>
         <option value="skype" >Skype</option>
         <option value="dribble">Dribbble</option>
