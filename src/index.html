@@ -28,18 +28,18 @@
 			<input class="input name" v-model="lastName" placeholder="Last Name" autofocus>
 			<input class="input" v-model="signatureInfo.jobfunction" placeholder="Job function">
       <select class="selection-dropdown" v-model="signatureInfo.network" style="width:30%; display:inline; margin-right: 5px;">
-        <option value="">choose network</option>
-        <option value="skype" >Skype</option>
-        <option value="dribble">Dribbble</option>
-        <option value="github">Github</option>
+        <option value="">Choose network</option>
+        <option value="Skype" >Skype</option>
+        <option value="Dribbble">Dribbble</option>
+        <option value="Github">Github</option>
       </select>
-			<input style="width:69%; display:inline;" :class="[signatureInfo.network == 'dribble' || signatureInfo.network == 'github' ? 'urlInput' : '']" class="input" v-model="signatureInfo.username" v-bind="signatureInfo.connection" placeholder="username">
+			<input style="width:69%; display:inline;" :class="[signatureInfo.network == 'Dribbble' || signatureInfo.network == 'Github' ? 'urlInput' : '']" class="input" v-model="signatureInfo.username" v-bind="signatureInfo.connection" placeholder="Username">
       <input
             class="input"
-            :class="[signatureInfo.network == 'dribble' || signatureInfo.network == 'github' ? 'urlInput' : '']"
+            :class="[signatureInfo.network == 'Dribbble' || signatureInfo.network == 'Github' ? 'urlInput' : '']"
             v-model="signatureInfo.networkUrl"
-            v-if="signatureInfo.network == 'dribble' || signatureInfo.network == 'github'" 
-            placeholder="link"/>
+            v-if="signatureInfo.network == 'Dribbble' || signatureInfo.network == 'Github'" 
+            placeholder="Link"/>
 			<input class="input" v-model="signatureInfo.twitterlink" placeholder="Twitter Link">
 			<input class="input" v-model="signatureInfo.linkedinlink" placeholder="Linkedin Link">
 			<button @click="download" class="success button" type="button">Download Signature</button>

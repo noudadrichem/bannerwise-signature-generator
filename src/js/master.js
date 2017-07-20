@@ -25,15 +25,15 @@ new Vue({
   },
   methods: {
     download() {
-      if(this.signatureInfo.network == 'skype'){
-        this.$set(this.signatureInfo, 'networkUrl', 'memes')
+      if(this.signatureInfo.network == 'Skype'){
+        this.$set(this.signatureInfo, 'networkUrl', '')
       }
       // H4ck3R1n00
       window.location.href = `data:application/octet-stream;base64,${btoa(template(this.signatureInfo))}`
     },
     preview() {
-      if(this.signatureInfo.network == 'skype'){
-        this.$set(this.signatureInfo, 'networkUrl', 'memes')
+      if(this.signatureInfo.network == 'Skype'){
+        this.$set(this.signatureInfo, 'networkUrl', '')
       }
       this.seePreview = !this.seePreview
       this.$set(this.signatureInfo, 'name', this.fullName)
